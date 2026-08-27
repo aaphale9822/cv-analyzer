@@ -383,13 +383,10 @@ else:
                 charge_branch_si = np.maximum(upper_curve_raw_A, 0.0)
                 discharge_branch_si = np.minimum(lower_curve_raw_A, 0.0)
                 
-               # Math integration (Raw Area in Watts = A * V)
-        try:
+               
+        # Math integration (Raw Area in Watts = A * V)
                 area_discharge = np.abs(np.trapezoid(discharge_branch_si, x=voltage_bins_si))
                 area_charge = np.abs(np.trapezoid(charge_branch_si, x=voltage_bins_si))
-            except AttributeError:
-                area_discharge = np.abs(np.trapz(discharge_branch_si, x=voltage_bins_si))
-                area_charge = np.abs(np.trapz(charge_branch_si, x=voltage_bins_si))
                 
                 # Absolute charge Q (C = A * s)
                 q_discharge_abs = area_discharge / scan_rate_si
