@@ -5,7 +5,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image, ImageOps
 import io
-
+# Initialize session state variables if they don't exist yet
+if "color_preset" not in st.session_state:
+    st.session_state.color_preset = "Default"  # or whatever your default option is
+    
 # Set Streamlit Page Configuration
 st.set_page_config(
     page_title="CV Capacity Analyzer",
@@ -60,6 +63,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Helper function to update HSV preset values in session state
+def update_hsv_presets():
+    # Safely retrieve the selected preset
+    preset = st.session_state.get("color_preset", "Default")
+    
 def update_hsv_presets():
     preset = st.session_state.color_preset
     if preset == "Blue":
