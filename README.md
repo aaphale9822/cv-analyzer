@@ -1,4 +1,4 @@
-# Zn//MnO₂ Cyclic Voltammetry (CV) Capacity & Capacitance Analyzer
+# Cyclic Voltammetry (CV) Capacity & Capacitance Analyzer
 
 A production-ready, mobile-friendly Streamlit web application designed to digitize Cyclic Voltammetry (CV) graph photos and screen captures, isolate the curve using OpenCV-based color segmentation, and compute specific charge capacity, specific capacitance, and Coulombic efficiency.
 
